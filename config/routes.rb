@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  #get "welcome/index"
+  devise_for :admins
+
+  # get "welcome/index"
 
   namespace :administrate do
     resources :articles
