@@ -7,6 +7,8 @@ module Administrate
     
     before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
 
+    layout "administrate"
+
     # GET /articles or /articles.json
     def index
       @articles = Article.all
