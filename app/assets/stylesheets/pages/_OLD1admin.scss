@@ -1,6 +1,6 @@
 body.menu-closed {
   .admin-main-content {
-    width: calc(100% - #{$admin-nav-closed-width});
+    width: calc(100% - $admin-nav-closed-width);
   }
 }
 
@@ -12,7 +12,7 @@ body.menu-closed {
 
   .admin-nav {
     display: inline-flex;
-    width: #{$admin-nav-width};
+    width: $admin-nav-width;
     height: 100vh;
     overflow: hidden;
   }
@@ -20,7 +20,7 @@ body.menu-closed {
   .admin-main-content {
     transition: width $animation-transition;
     display: inline-flex;
-    width: calc(100% - #{$admin-nav-width});
+    width: calc(100% - $admin-nav-width);
     height: 100vh;
     align-content: flex-start;
     align-items: flex-start;
@@ -32,8 +32,8 @@ body.menu-closed {
     display: flex;
     width: 100%;
     padding-bottom: 24px;
-    padding-left: #{$admin-content-padding};
-    padding-right: #{$admin-content-padding};
+    padding-left: $admin-content-padding;
+    padding-right: $admin-content-padding;
     padding-top: 64px;
     padding-bottom: 26px;
     font-size: 2.25rem;
@@ -41,7 +41,7 @@ body.menu-closed {
     background-color: #fff;
 
     @include bp-medium() {
-      padding: #{$admin-content-padding-mobile};
+      padding: $admin-content-padding-mobile;
       font-size: 1.6rem;
     }
   }
@@ -56,13 +56,13 @@ body.menu-closed {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: ($admin-content-padding / 2) #{$admin-content-padding};
-    padding-bottom: #{$admin-content-padding};
+    padding: ($admin-content-padding / 2) $admin-content-padding;
+    padding-bottom: $admin-content-padding;
     gap: 28px;
 
     @include bp-medium() {
-      padding-left: #{$admin-content-padding-mobile};
-      padding-right: #{$admin-content-padding-mobile};
+      padding-left: $admin-content-padding-mobile;
+      padding-right: $admin-content-padding-mobile;
     }
   }
 

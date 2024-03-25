@@ -40,7 +40,7 @@
   .post-detail-image {
     position: relative;
     display: flex;
-    width: calc(100% - (2 * $outline-border));
+    width: calc(100% - (2 * #{$outline-border}));
     margin-left: $outline-border;
     margin-bottom: $outline-border;
     border-radius: $outline-border;
