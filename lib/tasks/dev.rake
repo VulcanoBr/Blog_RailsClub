@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 namespace :dev do
-
-
   desc "Reset the database"
   task reset: :environment do
     system("rails db:drop")
@@ -27,7 +25,7 @@ namespace :dev do
       image_id = rand(1..3)
       article.cover_image.attach(
         io: File.open(Rails.root.join("lib/tasks/images/article_#{image_id}.jpg")),
-        filename: "article_#{image_id}.jpg"
+        filename: "article_#{image_id}.jpg",
       )
     end
   end

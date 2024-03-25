@@ -15,9 +15,10 @@ admins = ["admin@admin.com", "test@test.com"]
 
 admins.each do |email|
   next if Admin.find_by(email: email)
-    Admin.create!(
-      email: email,
-      password: ENV["DEFAULT_PASSWORD"],
-      password_confirmation: ENV["DEFAULT_PASSWORD"]
-    )
+
+  Admin.create!(
+    email: email,
+    password: ENV["DEFAULT_PASSWORD"],
+    password_confirmation: ENV["DEFAULT_PASSWORD"],
+  )
 end
