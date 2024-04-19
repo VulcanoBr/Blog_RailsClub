@@ -6,7 +6,7 @@ module Administrate
 
     # GET /articles or /articles.json
     def index
-      @articles = Article.all
+      @articles = Article.includes(:category).all
     end
 
     # GET /articles/1 or /articles/1.json
@@ -78,7 +78,7 @@ module Administrate
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :body, :cover_image)
+      params.require(:article).permit(:title, :body, :cover_image, :category_id)
     end
   end
 end
