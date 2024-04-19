@@ -23,7 +23,7 @@ module Administrate
 
     # POST /Categories or /Categories.json
     def create
-      @category = category.new(category_params)
+      @category = Category.new(category_params)
 
       respond_to do |format|
         if @category.save
@@ -54,7 +54,7 @@ module Administrate
       @category.destroy!
 
       respond_to do |format|
-        format.html { redirect_to(administrate_Categories_url, notice: "Category was successfully destroyed.") }
+        format.html { redirect_to(administrate_categories_url, notice: "Category was successfully destroyed.") }
         format.json { head(:no_content) }
       end
     end
@@ -63,7 +63,8 @@ module Administrate
 
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.friendly.find(params[:id])
+     # @category = Category.friendly.find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
