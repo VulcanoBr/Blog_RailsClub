@@ -4,7 +4,7 @@ module Administrate
   class ArticlesController < AdministrateController
     before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
     before_action :set_categories, only: [:new, :show, :edit]
-    
+
     # GET /articles or /articles.json
     def index
       @articles = Article.includes(:category).all
