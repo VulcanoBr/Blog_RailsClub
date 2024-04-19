@@ -2,7 +2,6 @@
 
 module Administrate
   class ArticlesController < AdministrateController
-
     before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
 
     # GET /articles or /articles.json

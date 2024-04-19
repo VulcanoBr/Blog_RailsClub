@@ -4,3 +4,6 @@ require:
   - rubocop-rails
 AllCops:
   TargetRubyVersion: 3.3.0
+Layout/LineLength:
+  Max: 120 # Define o máximo de caracteres por linha.
+  AllowedPatterns: ['\A\s*#'] # Ignora linhas que começam com um comentário.
