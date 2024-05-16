@@ -1,7 +1,7 @@
 module Administrate
   class CategoriesController < AdministrateController
+
     before_action :set_category, only: [:show, :edit, :update, :destroy]
-    #before_action :set_categories, only: [:new, :show, :edit]
 
     # GET /Categories or /Categories.json
     def index
@@ -63,7 +63,6 @@ module Administrate
 
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-     # @category = Category.friendly.find(params[:id])
       @category = Category.find(params[:id])
     end
 
