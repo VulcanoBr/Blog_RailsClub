@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.3.0"
+ruby "3.3.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
@@ -56,6 +56,10 @@ group :development, :test do
   gem "dotenv-rails"
   gem "faker"
   gem "tty-spinner"
+  # gem "minitest", ">= 5.23.0"
+  # gem "drb", ">= 2.2.0"
+  # gem "bigdecimal", "~> 3.1.5"
+  # gem "bigdecimal", "~> 3.1.8"
 end
 
 group :development do

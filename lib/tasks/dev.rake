@@ -37,7 +37,8 @@ namespace :dev do
 
       image_id = rand(1..3)
       article.cover_image.attach(
-        io: File.open(Rails.root.join("lib/tasks/images/article_#{image_id}.jpg")),
+        # io: File.open(Rails.root.join("lib/tasks/images/article_#{image_id}.jpg")),
+        io: Rails.root.join("lib/tasks/images/article_#{image_id}.jpg").open,
         filename: "article_#{image_id}.jpg",
       )
     end

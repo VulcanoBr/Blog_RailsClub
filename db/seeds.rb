@@ -13,7 +13,7 @@
 # Create default admin users
 admins = {
   "admin@admin.com" => "Administrador",
-  "test@test.com" => "Teste"
+  "test@test.com" => "Teste",
 }
 
 admins.each do |email, name|

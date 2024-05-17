@@ -1,9 +1,66 @@
 inherit_gem:
   rubocop-shopify: rubocop.yml
+
+# Extendendo as configurações do RuboCop com as gems adicionais
 require:
+ # - rubocop-performance
   - rubocop-rails
+  #  - rubocop-rspec
+  #  - rubocop-rspec_rails
+  #  - rubocop-factory_bot
+  #  - rubocop-faker
+
+# Configurações específicas para rubocop-performance
+#Performance:
+#  Enabled: true
+
+# Configurações específicas para rubocop-rails
+Rails:
+  Enabled: true
+
+# Configurações específicas para rubocop-rspec
+#RSpec:
+#  Enabled: true
+
+# Configurações específicas para rubocop-rspec_rails
+#RSpecRails:
+#  Enabled: true
+
+# Configurações específicas para rubocop-factory_bot
+#FactoryBot:
+#  Enabled: true
+
+# Configurações específicas para rubocop-faker
+#Faker:
+#  Enabled: true
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+# Outras configurações personalizadas do RuboCop
 AllCops:
-  TargetRubyVersion: 3.3.0
+  NewCops: enable
+  Exclude:
+    - 'config/**/*'
+    - 'bin/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+# Desativa a regra de documentação para arquivos específicos
+Style/Documentation:
+  Exclude:
+    - 'app/helpers/application_helper.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/application_record.rb'
+
 Layout/LineLength:
   Max: 120 # Define o máximo de caracteres por linha.
   AllowedPatterns: ['\A\s*#'] # Ignora linhas que começam com um comentário.
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/MethodLength:
+  Max: 20

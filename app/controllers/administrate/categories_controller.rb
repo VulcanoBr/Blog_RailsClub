@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Administrate
   class CategoriesController < AdministrateController
-
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     # GET /Categories or /Categories.json
@@ -27,7 +28,9 @@ module Administrate
 
       respond_to do |format|
         if @category.save
-          format.html { redirect_to(administrate_category_url(@category), notice: "Category was successfully created.") }
+          format.html do
+            redirect_to(administrate_category_url(@category), notice: "Category was successfully created.")
+          end
           format.json { render(:show, status: :created, location: @category) }
         else
           format.html { render(:new, status: :unprocessable_entity) }
@@ -40,7 +43,9 @@ module Administrate
     def update
       respond_to do |format|
         if @category.update(category_params)
-          format.html { redirect_to(administrate_category_url(@category), notice: "Category was successfully updated.") }
+          format.html do
+            redirect_to(administrate_category_url(@category), notice: "Category was successfully updated.")
+          end
           format.json { render(:show, status: :ok, location: @category) }
         else
           format.html { render(:edit, status: :unprocessable_entity) }
@@ -51,13 +56,13 @@ module Administrate
 
     # DELETE /Categories/1 or /Categories/1.json
     def destroy
-
       respond_to do |format|
         format.html do
           if @category.articles.count > 0
             redirect_to(
               administrate_categories_url,
-              alert: "Category can not destroyed.")
+              alert: "Category can not destroyed.",
+            )
           else
             @category.destroy!
             redirect_to(administrate_categories_url, notice: "Category was successfully destroyed.")

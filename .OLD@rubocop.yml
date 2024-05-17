@@ -1,0 +1,31 @@
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+require:
+  - rubocop-rails
+
+Rails/HasManyOrHasOneDependent:
+  - Enabled: false
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'config/**/*'
+    - 'bin/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'each_key'
+    - '/home/vulcan/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/rubocop-1.63.5/lib/rubocop/**/*'
+
+Layout/LineLength:
+  Max: 120 # Define o máximo de caracteres por linha.
+  AllowedPatterns: ['\A\s*#'] # Ignora linhas que começam com um comentário.
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Max: 45
