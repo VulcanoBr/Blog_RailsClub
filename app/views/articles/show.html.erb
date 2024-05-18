@@ -8,19 +8,18 @@
 		<div class="container">
 			<div class="primary-content">
 				<div class="post-detail-image">
-          <%= image_tag "posts/detail/post1.jpg", alt:"post 1" %>
+          <%= image_tag(cover_image_fallback(@article, :medium), alt: @article.title) %>
 				</div>
 			</div>
 			<div class="secondary-content">
 				<a href="#" class="post-detail-image-ad">
-					<img src="./img/ad/image-ad.jpg">
           <%= image_tag "ad/image-ad.jpg", alt:"image ad" %>
 				</a>
 				<div class="share-post">
 					<div class="share-post-title">Compartilhar post</div>
 					<div class="socials">
-						<a href="#"><img src="./img/icons/red/facebook.svg"></a>
-						<a href="#"><img src="./img/icons/red/twitter.svg"></a>
+						<a href="#"><%= image_tag "icons/red/facebook.svg", alt: "icon facebook" %></a>
+						<a href="#"><%= image_tag "icons/red/twitter.svg", alt: "icon twitter" %></a>
 					</div>
 				</div>
 			</div>
@@ -56,43 +55,11 @@
 		<div class="container">
 			<div class="primary-content">
 				<div class="post-detail-content">
-					<h2>Pré-requisitos</h2>
-					<p>
-						Lorem ipsum dolor sit amet . Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as
-						profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o
-						que
-						é? Lorem ipsum é um texto fofo sem qualquer sentido.
-
-						É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo,
-						mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir
-						de textos ad hoc compostos por profissionais de comunicação. <br><br>
-
-						É certamente o texto de marcador de posição mais famoso, mesmo que existam diferentes versões distinguíveis
-						da ordem em que as palavras latinas são repetidas, <a href="#">clique aqui</a> para saber mais <br><br>
-
-						Lorem ipsum contém as tipos de letra mais em uso, um aspecto que permite que você tenha uma visão geral da
-						renderização do texto em termos de escolha da fonte e tamanho da fonte.<br><br>
-
-						Ao se referir a Lorem ipsum, diferentes expressões são usadas, nomeadamente texto de preenchimento, texto
-						fictício, texto cego ou texto do espaço reservado: em suma, seu significado também pode ser zero, mas sua
-						utilidade é tão clara quanto ao longo dos séculos e resiste às versões irônicas e modernas que vieram com a
-						chegada da web.
-					</p>
-					<h3>Como instalar</h3>
-					<p>
-						Lorem ipsum dolor sit amet. Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as
-						profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o
-						que
-						é? Lorem ipsum é um texto fofo sem qualquer sentido. <br><br>
-
-						É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo,
-						mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir
-						de textos ad hoc compostos por profissionais de comunicação.
-					</p>
+					<%= @article.body %>
 				</div>
 				<div class="post-detail-author-bio">
 					<div class="image">
-						<img src="./img/author/jackson2.jpg">
+            <%= image_tag "author/jackson2.jpg", alt: "picture jackson 2" %>
 						<div class="text-mobile">
 							<div class="label">sobre o autor</div>
 							<div class="author-name">Jackson Pires</div>
@@ -108,11 +75,11 @@
 							pessoas.
 						</div>
 						<div class="author-social">
-							<a href="#"><img src="./img/icons/gray/facebook.svg"></a>
-							<a href="#"><img src="./img/icons/gray/instagram.svg"></a>
-							<a href="#"><img src="./img/icons/gray/twitter.svg"></a>
-							<a href="#"><img src="./img/icons/gray/linkedin.svg"></a>
-							<a href="#"><img src="./img/icons/gray/youtube.svg"></a>
+							<a href="#"><%= image_tag "icons/gray/facebook.svg", alt: "icon facebook" %></a>
+							<a href="#"><%= image_tag "icons/gray/instagram.svg", alt: "icon instagram" %></a>
+							<a href="#"><%= image_tag "icons/gray/twitter.svg", alt: "icon twitter" %></a>
+							<a href="#"><%= image_tag "icons/gray/linkedin.svg", alt: "icon linkedin" %></a>
+							<a href="#"><%= image_tag "icons/gray/youtube.svg", alt: "icon youtube" %></a>
 						</div>
 					</div>
 				</div>
@@ -137,7 +104,7 @@
 							<div class="author-row">
 								<div>
 									<div class="avatar">
-										<img src="./img/avatar/man-1.svg">
+										<%= image_tag "avatar/man-1.svg", alt: "avatar man 1" %>
 									</div>
 									<div class="name">Marcio Junior</div>
 								</div>
@@ -159,7 +126,7 @@
 							<div class="author-row">
 								<div>
 									<div class="avatar">
-										<img src="./img/avatar/woman-1.svg">
+										<%= image_tag "avatar/woman-1.svg", alt: "avatar woman 1" %>
 									</div>
 									<div class="name">Ana Cristina</div>
 								</div>
@@ -181,7 +148,7 @@
 							<div class="author-row">
 								<div>
 									<div class="avatar">
-										<img src="./img/avatar/man-2.svg">
+										<%= image_tag "avatar/man-2.svg", alt: "avatar man 2" %>
 									</div>
 									<div class="name">Igor Henrique</div>
 								</div>
@@ -203,7 +170,7 @@
 							<div class="author-row">
 								<div>
 									<div class="avatar">
-										<img src="./img/avatar/woman-2.svg">
+										<%= image_tag "avatar/woman-2.svg", alt: "avatar woman 2" %>
 									</div>
 									<div class="name">Maria Lúcia</div>
 								</div>
@@ -226,34 +193,27 @@
 			</div>
 			<div class="secondary-content">
 				<a href="#" class="post-content-ad">
-					<img src="./img/ad/post-content-ad.jpg">
+					<%= image_tag "ad/post-content-ad.jpg", alt: "image ad post content" %>
 				</a>
 				<div class="post-detail-other-posts">
 					<div class="other-posts-title">Outras publicações</div>
 					<a href="#" class="post-resume">
-						<img src="./img/posts/post1.jpg" class="post-resume-image">
+						<%= image_tag "posts/post1.jpg", alt: "image post 1", class:"post-resume-image" %>
 						<h4 class="post-resume-title">Ruby on Rails 6 completo, do básico ao avançado</h4>
 					</a>
 					<a href="#" class="post-resume">
-						<img src="./img/posts/post2.jpg" class="post-resume-image">
+						<%= image_tag "posts/post2.jpg", alt: "image post 2", class:"post-resume-image" %>
 						<h4 class="post-resume-title">Aprenda os melhores comandos para terminal</h4>
 					</a>
 					<a href="#" class="post-resume">
-						<img src="./img/posts/post3.jpg" class="post-resume-image">
+						<%= image_tag "posts/post3.jpg", alt: "image post 3", class: "post-resume-image" %>
 						<h4 class="post-resume-title">Melhores práticas para desenvolvimento web</h4>
 					</a>
 				</div>
 				<a href="#" class="post-content-ad">
-					<img src="./img/ad/post-content-footer-ad.jpg">
+					<%= image_tag "ad/post-content-footer-ad.jpg", alt: "image ad post contet footer" %>
 				</a>
 			</div>
 		</div>
 		</div>
 	</section>
-
-<div>
-  <h2><%= @article.title %> </h2>
-  <div>
-    <p> <%= @article.body %> </p>
-  </div>
-</div>
