@@ -8,8 +8,9 @@
         </div>
       </div>
 
+
       <div>
-        <%= button_to "Apagar categoria", [:administrate, @category], data: { turbo: false }, method: :delete, class: "button small" if action == :show %>
+        <%= button_to "Apagar autor", [:administrate, @category], data: { turbo: false }, method: :delete, class: "button small" if action == :show %>
       </div>
 
       <%= form.submit style: "display: none;" %>

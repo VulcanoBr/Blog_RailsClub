@@ -42,7 +42,7 @@ namespace :dev do
         instagram_profile_url: Faker::Internet.url(host: "instagram.com"),
         twitter_profile_url: Faker::Internet.url(host: "twitter.com"),
         linkedin_profile_url: Faker::Internet.url(host: "linkedin.com"),
-        youtube_profile_url: Faker::Internet.url(host: "youtube.com")
+        youtube_profile_url: Faker::Internet.url(host: "youtube.com"),
       )
       image_id = rand(1..5)
       author.avatar_image.attach(
@@ -59,7 +59,7 @@ namespace :dev do
         title: Faker::Lorem.sentence.delete("."),
         body: Faker::Lorem.paragraph(sentence_count: rand(100..200)),
         category: Category.all.sample,
-        author: Author.all.sample
+        author: Author.all.sample,
       )
 
       image_id = rand(1..5)

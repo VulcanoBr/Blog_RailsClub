@@ -42,7 +42,7 @@ Rails/I18nLocaleTexts:
 
 # Outras configurações personalizadas do RuboCop
 AllCops:
-  #NewCops: enable
+  NewCops: enable
   SuggestExtensions: false
   Exclude:
     - 'config/**/*'
