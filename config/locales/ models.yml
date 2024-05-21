@@ -3,6 +3,7 @@ pt-BR:
     models:
       admin: Administrador
       article: Artigo
+      author: Autor
     attributes:
       admin:
         id: Identificador
@@ -21,3 +22,15 @@ pt-BR:
         updated_at: Atualizado em
         slug: Slug
         cover_image: Imagem de capa
+        category_id: Categoria
+        author_id: Autor
+      author:
+        name: Nome
+        description: Descrição
+        avatar_image: Foto autor
+        facebook_profile_url: Facebook URL
+        instagram_profile_url: Instagram URL
+        twitter_profile_url: Twitter URL
+        linkedin_profile_url: Linkedin URL
+        youtube_profile_url: Youtub URL
+

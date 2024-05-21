@@ -4,6 +4,7 @@ module Administrate
   class ArticlesController < AdministrateController
     before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
     before_action :set_categories, only: [:new, :show, :edit]
+    before_action :set_authors, only: [:new, :show, :edit]
 
     # GET /articles or /articles.json
     def index
@@ -81,9 +82,13 @@ module Administrate
       @categories = Category.all
     end
 
+    def set_authors
+      @authors = Author.all
+    end
+
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :body, :cover_image, :category_id)
+      params.require(:article).permit(:title, :body, :cover_image, :category_id, :author_id)
     end
   end
 end
