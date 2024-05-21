@@ -51,6 +51,19 @@
       </div>
 
       <div>
+        <%= form.label :avatar_image, style: "display: block", class: "mb-8 label-input-file" %>
+        <%= (form.file_field :avatar_image, style: "margin-bottom: 8px;") if action != :show %>
+
+        <div id=<%= dom_id(author) %> >
+          <%= image_tag author.avatar_image if author.avatar_image.attached? %>
+
+          <%= link_to "Remover", 
+            destroy_avatar_image_administrate_author_path(author),
+            data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if author.avatar_image.attached? && action != :show %>
+        </div>
+      </div>
+
+      <div>
         <%= button_to "Apagar autor", [:administrate, @author], data: { turbo: false }, method: :delete, class: "button small" if action == :show %>
       </div>
 
