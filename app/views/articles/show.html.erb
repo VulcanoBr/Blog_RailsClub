@@ -39,7 +39,7 @@
 					</div>
 					<div class="text-container">
 						<div class="label">Autor</div>
-						<div class="description">Jackson Pires</div>
+						<div class="description"><%= @article.author.name %></div>
 					</div>
 				</div>
 				<div class="category text-container">
@@ -66,24 +66,31 @@
             <%= image_tag "author/jackson2.jpg", alt: "picture jackson 2" %>
 						<div class="text-mobile">
 							<div class="label">sobre o autor</div>
-							<div class="author-name">Jackson Pires</div>
+							<div class="author-name"><%= @article.author.name %></div>
 						</div>
 					</div>
 					<div class="text">
 						<div class="label">sobre o autor</div>
 						<div class="author-name">Jackson Pires</div>
 						<div class="author-description">
-							Desenvolvedor desde 1999. Especialista em Engenharia de Software com Ênfase em Software Livre. Professor
-							acadêmico de 2009 até 2016. Entusiasta Ruby on Rails desde 2007. Atualmente mantendo o site Vídeos de TI e
-							dedicando-se ao EAD com cursos na área de desenvolvimento de software, tendo treinado mais de 20.000
-							pessoas.
+							<%= @article.author.description %>
 						</div>
 						<div class="author-social">
-							<a href="#"><%= image_tag "icons/gray/facebook.svg", alt: "icon facebook" %></a>
-							<a href="#"><%= image_tag "icons/gray/instagram.svg", alt: "icon instagram" %></a>
-							<a href="#"><%= image_tag "icons/gray/twitter.svg", alt: "icon twitter" %></a>
-							<a href="#"><%= image_tag "icons/gray/linkedin.svg", alt: "icon linkedin" %></a>
-							<a href="#"><%= image_tag "icons/gray/youtube.svg", alt: "icon youtube" %></a>
+							<%= link_to @article.author.facebook_profile_url do %>
+                <%= image_tag "icons/gray/facebook.svg", alt: "icon facebook" %>
+              <% end %>
+							<%= link_to @article.author.instagram_profile_url do %>
+                <%= image_tag "icons/gray/instagram.svg", alt: "icon instagram" %>
+              <% end %>
+							<%= link_to @article.author.twitter_profile_url do %>
+                <%= image_tag "icons/gray/twitter.svg", alt: "icon twitter" %>
+              <% end %>
+							<%= link_to @article.author.linkedin_profile_url do %>
+                <%= image_tag "icons/gray/linkedin.svg", alt: "icon linkedin" %>
+              <% end %>
+							<%= link_to @article.author.youtube_profile_url do %>
+                <%= image_tag "icons/gray/youtube.svg", alt: "icon youtube" %>
+              <% end %>
 						</div>
 					</div>
 				</div>
