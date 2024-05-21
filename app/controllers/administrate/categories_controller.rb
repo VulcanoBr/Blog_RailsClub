@@ -2,7 +2,7 @@
 
 module Administrate
   class CategoriesController < AdministrateController
-    before_action :set_category, only: [:show, :edit, :update, :destroy]
+    before_action :set_category, only: [:show, :edit, :update, :destroy, :destroy_category_image]
 
     # GET /Categories or /Categories.json
     def index
@@ -25,7 +25,7 @@ module Administrate
     # POST /Categories or /Categories.json
     def create
       @category = Category.new(category_params)
-
+      @category.category_image.attach(category_params[:category_image])
       respond_to do |format|
         if @category.save
           format.html do
@@ -72,6 +72,14 @@ module Administrate
       end
     end
 
+    def destroy_category_image
+      @category.category_image.purge
+
+      respond_to do |format|
+        format.turbo_stream { render(turbo_stream: turbo_stream.remove(@category)) }
+      end
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -81,7 +89,7 @@ module Administrate
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :description, :category_image)
     end
   end
 end

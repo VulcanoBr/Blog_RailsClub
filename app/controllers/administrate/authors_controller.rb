@@ -90,9 +90,17 @@ module Administrate
 
     # Only allow a list of trusted parameters through.
     def author_params
-      params.require(:author).permit(:name, :description, :facebook_profile_url,
-      :instagram_profile_url, :twitter_profile_url, :linkedin_profile_url,
-      :youtube_profile_url, :avatar_image, :_destroy)
+      params.require(:author).permit(
+        :name,
+        :description,
+        :facebook_profile_url,
+        :instagram_profile_url,
+        :twitter_profile_url,
+        :linkedin_profile_url,
+        :youtube_profile_url,
+        :avatar_image,
+        :_destroy,
+      )
     end
   end
 end
