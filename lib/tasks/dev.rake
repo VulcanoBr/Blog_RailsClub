@@ -10,6 +10,8 @@ namespace :dev do
     system("rails dev:add_categories")
     system("rails dev:add_authors")
     system("rails dev:add_articles")
+    system("rails dev:add_users")
+    system("rails dev:add_comments")
   end
 
   desc "Add categories to the database"
@@ -27,10 +29,21 @@ namespace :dev do
     show_spinner("Adding articles to the database") { add_articles }
   end
 
+  desc "Add users to the database"
+  task add_users: :environment do
+    show_spinner("Adding users to the database") { add_users }
+  end
+
+  desc "Add comments to the database"
+  task add_comments: :environment do
+    show_spinner("Adding comments to the database") { add_comments }
+  end
+
   def add_categories
     ["Ruby", "Rails", "WSL", "Linux", "Hotwire", "DevOps", "Marketing", "Frontend"].each do |name|
-      category = Category.create!(name: name,
-                        description: Faker::Lorem.paragraph(sentence_count: rand(2..5)),
+      category = Category.create!(
+        name: name,
+        description: Faker::Lorem.paragraph(sentence_count: rand(2..5)),
       )
       image_id = rand(1..8)
       category.category_image.attach(
@@ -78,6 +91,27 @@ namespace :dev do
         filename: "article_#{image_id}.jpg",
       )
     end
+  end
+
+  def add_users
+    30.times do
+      User.create(
+        email: Faker::Internet.email,
+        password: ENV["DEFAULT_PASSWORD"],
+        password_confirmation: ENV["DEFAULT_PASSWORD"],
+      )
+    end
+  end
+
+  def add_comments
+    100.times do
+      Comment.create(
+        user: User.all.sample,
+        article: Article.all.sample,
+        body: Faker::Lorem.paragraph(sentence_count: rand(1..5))
+      )
+    end
+
   end
 
   def show_spinner(msg_start, msg_end = "Done!")
