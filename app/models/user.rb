@@ -10,5 +10,4 @@ class User < ApplicationRecord
     :validatable
 
   has_many :comments, dependent: :destroy
-
 end

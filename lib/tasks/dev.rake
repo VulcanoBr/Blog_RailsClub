@@ -112,7 +112,6 @@ namespace :dev do
         created_at: Faker::Date.between(from: 1.year.ago, to: Date.current),
       )
     end
-
   end
 
   def show_spinner(msg_start, msg_end = "Done!")
