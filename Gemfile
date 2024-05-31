@@ -60,6 +60,7 @@ group :development, :test do
   # gem "drb", ">= 2.2.0"
   # gem "bigdecimal", "~> 3.1.5"
   # gem "bigdecimal", "~> 3.1.8"
+  gem 'railroady'
 end
 
 group :development do
