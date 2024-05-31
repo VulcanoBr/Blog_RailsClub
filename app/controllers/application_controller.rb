@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   def set_footer_data
     return if params[:controller].split("/").first == "administrate"
 
-    @footer_categories_1 = Category.all.order(created_at: :asc).limit(4)
-    @footer_categories_2 = Category.all.order(created_at: :desc).limit(4)
+    @footer_categories_1 = Category.order(created_at: :asc).limit(4)
+    @footer_categories_2 = Category.order(created_at: :desc).limit(4)
     @footer_articles = Article.all.sample(4)
   end
 
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    request.referrer if resource_or_scope == :user
+    request.referer if resource_or_scope == :user
     super
   end
 end

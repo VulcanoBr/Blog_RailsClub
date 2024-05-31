@@ -40,7 +40,7 @@
   .post-detail-image {
     position: relative;
     display: flex;
-    width: calc(100% - (2 * #{$outline-border}));
+    width: calc(100% - (2 * $outline-border));
     margin-left: $outline-border;
     margin-bottom: $outline-border;
     border-radius: $outline-border;
@@ -502,7 +502,7 @@
     text-align: right;
     width: 100%;
   }
-  
+
   .post-detail-comments-list {
     display: flex;
     flex-direction: column;
@@ -577,6 +577,9 @@
 
   .post-detail-comment-item .actions-row .like,
   .post-detail-comment-item .actions-row .deslike {
+    border: none;
+    background: #fff;
+    cursor: pointer;
     color: $black;
     font-size: 0.875rem;
     font-weight: $font-weight-bold;
